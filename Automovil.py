@@ -1,11 +1,13 @@
 class Automovil: 
 
-    def __init__(self, color, marca, aceleracion, velocidad):
+    ruedas = 4
+
+    def __init__(self, color, marca, aceleracion, velocidad, ruedas):
         self.color = color
         self.marca = marca
         self.aceleracion = aceleracion
         self.velocidad = velocidad
-        self.ruedas = 4
+        self.ruedas = ruedas
 
     def get_color(self):
         return self.color
@@ -54,8 +56,8 @@ class Automovil:
         print(f"La velocidad actual: {self.velocidad}")
     
 
-automovil_nuevo = Automovil("rojo", "toyota", 12, 120)
-automovil_dos = Automovil("Verde","toyota",13,140)
+automovil_nuevo = Automovil("rojo", "toyota", 12, 120,4)
+automovil_dos = Automovil("Verde","toyota",13,140,4)
 
 print(automovil_nuevo) 
 automovil_nuevo.mostrar_ruedas_aceleracion()
