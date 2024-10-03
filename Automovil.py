@@ -1,13 +1,14 @@
 class Automovil: 
 
-    ruedas = 4
-
-    def __init__(self, color, marca, aceleracion, velocidad, ruedas):
+    
+    def __init__(self, color, marca, aceleracion, velocidad, ruedas, modelo , año):
         self.color = color
         self.marca = marca
         self.aceleracion = aceleracion
         self.velocidad = velocidad
-        self.ruedas = ruedas
+        self.ruedas = 4
+        self.__modelo = modelo
+        self._año = año
 
     def get_color(self):
         return self.color
@@ -36,6 +37,18 @@ class Automovil:
     def set_velocidad(self, velocidad):
         self.velocidad = velocidad
     
+    def set_modelo(self, marca):
+        self.__modelo = marca
+
+    def get_modelo(self):
+        return self.__modelo
+    
+    def set_año(self,año):
+        self._año = año
+    
+    def get_año(self):
+        return self._año
+
     def __str__(self):
         return f"El automovil es de color: {self.color} y la marca es {self.marca}"
 
@@ -54,15 +67,15 @@ class Automovil:
         frenado = self.velocidad - self.aceleracion
         self.velocidad = frenado
         print(f"La velocidad actual: {self.velocidad}")
-    
 
-automovil_nuevo = Automovil("rojo", "toyota", 12, 120,4)
-automovil_dos = Automovil("Verde","toyota",13,140,4)
+        
+
+automovil_nuevo = Automovil("rojo", "toyota", 12, 120,4,"asd",1980)
+automovil_dos = Automovil("Verde","toyota",13,140,4,"asd",2000)
 
 print(automovil_nuevo) 
 automovil_nuevo.mostrar_ruedas_aceleracion()
 
-print()
 
 automovil_dos.acelera()
 
@@ -70,3 +83,11 @@ automovil_dos.frenar()
 automovil_dos.frenar()
 automovil_dos.frenar()
 automovil_dos.frenar()
+
+print(automovil_dos.ruedas) # Se accede ya que no es privado
+
+print("El modelo es: "+automovil_dos.get_modelo())
+
+automovil_dos.set_modelo("Nueva_marca")
+
+print("El nuevo modelo es: "+automovil_dos.get_modelo())
