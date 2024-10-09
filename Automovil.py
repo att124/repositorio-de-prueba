@@ -49,6 +49,16 @@ class Automovil:
     def get_año(self):
         return self._año
 
+    def datos(self):
+
+        cantidad_ruedas = self.ruedas
+
+        print ("la cantidad de ruedas es de: "+ str(cantidad_ruedas))
+
+        return "el automovil tiene esta cantidad de ruedas: "+ str(self.ruedas)
+        
+
+
     def __str__(self):
         return f"El automovil es de color: {self.color} y la marca es {self.marca}"
 
@@ -91,3 +101,6 @@ print("El modelo es: "+automovil_dos.get_modelo())
 automovil_dos.set_modelo("Nueva_marca")
 
 print("El nuevo modelo es: "+automovil_dos.get_modelo())
+
+
+automovil_dos.datos()

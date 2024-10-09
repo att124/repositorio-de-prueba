@@ -3,8 +3,8 @@ from Automovil import Automovil
 
 
 class AutomovilVolador(Automovil):
-    def __init__(self, color, marca, aceleracion, velocidad,ruedas):   
-        super().__init__(color, marca, aceleracion, velocidad,ruedas)
+    def __init__(self, color, marca, aceleracion, velocidad,ruedas,modelo , año):   
+        super().__init__(color, marca, aceleracion, velocidad,ruedas,modelo , año)
         self.esta_volando = True
         self.ruedas = 6
 
@@ -27,9 +27,18 @@ class AutomovilVolador(Automovil):
             print(f"El automovil comienza a aterrizar")
 
             self.esta_volando = False
+
+    def datos(self):
+        
+        ruedas = self.ruedas
+
+        return (f"El automovil es volador y sus ruedas: {ruedas}")
+    
+
+    
         
 
-automovil_volador = AutomovilVolador("Rojo","toyota",12,100,6)
+automovil_volador = AutomovilVolador("Rojo","toyota",12,100,6,"asd",123)
 
 automovil_volador.aterrizar()
 
